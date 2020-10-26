@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Collapse,
   Navbar,
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavbarText
+  NavLink,
+  NavItem
 } from 'reactstrap';
 
 const Header = (props) => {
@@ -15,14 +17,20 @@ const Header = (props) => {
 
   return (
     <div>
-      <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">reactstrap</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar></Nav>
-          <NavbarText>Simple Text</NavbarText>
-        </Collapse>
-      </Navbar>
+            <Navbar color="light" light expand="md">
+                <NavbarBrand tag={Link} to="/" href="/">reactstrap</NavbarBrand>
+                <NavbarToggler onClick={toggle} />
+                <Collapse isOpen={isOpen} navbar>
+                <Nav className="ml" navbar>
+                    <NavItem>
+                        <NavLink tag={Link} to="/roomChat">Room Chat</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink tag={Link} to="/liveVisitors">Live Visitors</NavLink>
+                    </NavItem>
+                </Nav>
+                </Collapse>
+            </Navbar>
     </div>
   );
 }

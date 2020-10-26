@@ -23,9 +23,7 @@ const emitVisitors = () => {
 
 io.on('connection', (socket) => {
     console.log('a user connected');
-    
-    
-    
+
     socket.on('chat message', (msg) => {
         // emits to the client
         io.emit('chat message', msg);

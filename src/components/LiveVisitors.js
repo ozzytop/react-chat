@@ -49,8 +49,8 @@ export default class LiveVisitors extends Component {
            return (
                <tr key={index}>
                    <td>{index + 1 }</td>
-                   <td>{v.ip}</td>
-                   <td><img width="30px" src={this.getCountryFlag(v.countryCode)} /></td>
+                   <td>{v.ip ? v.ip : ''}</td>
+                   <td><img width="50px" src={this.getCountryFlag(v.countryCode)} /></td>
                    <td>{v.city}</td>
                    <td>{v.state}</td>
                    <td>{v.country}</td>
